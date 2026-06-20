@@ -3,31 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Sber Rate — Калькуляторы логистики Индия–Россия</title>
+<title>TradeRate — Калькуляторы логистики Индия–Россия</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════════════════════════════════ DESIGN SYSTEM ═══════════════════════════════════════ */
 :root{
-  /* Sber palette */
-  --green: #21A038;
-  --green-hover: #1a8a2e;
-  --green-light: rgba(33,160,56,.08);
-  --dark: #0A1E3D;
-  --dark-2: #0f2a4f;
+  --accent: #1e3a5f;
+  --accent-hover: #162d4a;
+  --accent-light: rgba(30,58,95,.08);
+  --dark: #fafbfc;
+  --dark-2: #e8edf5;
   --ink: #1a1a2e;
   --muted: #5a6072;
   --ghost: #9ca3af;
-  --border: #E5E7EB;
-  --bg: #F5F7FA;
+  --border: #e2e6ed;
+  --bg: linear-gradient(135deg,#e8edf5 0%,#f0f4f8 30%,#fafbfc 70%,#e8edf5 100%);
   --white: #fff;
-  --orange: #FF9933;
 
-  /* Tokens */
   --radius: 14px;
   --radius-sm: 10px;
-  --shadow-card: 0 1px 2px rgba(10,30,61,.04), 0 8px 24px rgba(10,30,61,.06);
-  --shadow-elevated: 0 4px 12px rgba(10,30,61,.08), 0 16px 40px rgba(10,30,61,.06);
+  --shadow-card: 0 1px 2px rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.04);
+  --shadow-elevated: 0 4px 12px rgba(0,0,0,.06), 0 16px 40px rgba(0,0,0,.06);
   --transition: 180ms ease;
   --max-width: 1200px;
 }
@@ -46,31 +43,31 @@ body{
 
 /* ═══════════════════════════════════════════════ HEADER ═══════════════════════════════════════════ */
 .header{
-  background:var(--dark);
+  background:rgba(255,255,255,.75);backdrop-filter:blur(20px);
   position:sticky;top:0;z-index:100;
-  border-bottom:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(0,0,0,.06);
 }
 .header-inner{
   max-width:var(--max-width);margin:0 auto;padding:0 32px;
   display:flex;align-items:center;height:68px;gap:20px;
 }
-.logo{font-size:22px;font-weight:800;color:#fff;letter-spacing:-.6px;white-space:nowrap}
-.logo .gr{color:var(--green)}.logo .or{color:var(--orange)}
+.logo{font-size:22px;font-weight:800;color:var(--ink);letter-spacing:-.6px;white-space:nowrap}
+.logo .gr{color:var(--ink)}.logo .or{color:var(--accent)}
 .badge{
-  color:rgba(255,255,255,.45);font-size:12px;font-weight:500;
-  border-left:1px solid rgba(255,255,255,.12);padding-left:16px;
+  color:var(--muted);font-size:12px;font-weight:500;
+  border-left:1px solid var(--border);padding-left:16px;
   white-space:nowrap;letter-spacing:.1px;
 }
 .header-right{margin-left:auto;display:flex;flex-direction:column;gap:1px;align-items:flex-end;cursor:pointer}
 .header-right:hover{opacity:.85}
-.header-right .rate{font-size:11px;color:rgba(255,255,255,.55);line-height:1.6;text-align:right;font-family:inherit}
-.header-right .rate strong{color:#fff;font-size:11px;font-weight:600;margin-left:2px;font-family:inherit}
-.header-right .rate small{color:rgba(255,255,255,.4);font-size:10px;margin-left:4px;font-family:inherit}
+.header-right .rate{font-size:11px;color:var(--muted);line-height:1.6;text-align:right;font-family:inherit}
+.header-right .rate strong{color:var(--ink);font-size:11px;font-weight:600;margin-left:2px;font-family:inherit}
+.header-right .rate small{color:var(--ghost);font-size:10px;margin-left:4px;font-family:inherit}
 /* About fold */
 .about-fold{border-top:1px solid rgba(255,255,255,.06)}
 .about-fold-inner{max-width:var(--max-width);margin:0 auto;padding:8px 32px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:background .15s}
 .about-fold-inner:hover{background:rgba(255,255,255,.02)}
-.about-avatar{width:32px;height:32px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.about-avatar{width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
 .about-name{color:#fff;font-size:13px;font-weight:600}
 .about-role{color:rgba(255,255,255,.35);font-size:11px;flex:1}
 .about-arrow{color:rgba(255,255,255,.3);font-size:10px;transition:transform .2s}
@@ -106,7 +103,7 @@ body{
   cursor:pointer;transition:all var(--transition);
   white-space:nowrap;
 }
-.tabs button:hover{border-color:var(--green);color:var(--green)}
+.tabs button:hover{border-color:var(--accent);color:var(--accent)}
 .tabs button.active{
   background:var(--dark);border-color:var(--dark);
   color:#fff;font-weight:600;
@@ -155,7 +152,7 @@ select{
   cursor:pointer;font-family:inherit;
   transition:border-color var(--transition);
 }
-select:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px var(--green-light)}
+select:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-light)}
 .mb{margin-bottom:18px}
 
 /* ═══════════════════════════════════════════════ SLIDERS ═════════════════════════════════════════ */
@@ -172,7 +169,7 @@ input[type=range]{
 }
 input[type=range]::-webkit-slider-thumb{
   -webkit-appearance:none;width:22px;height:22px;border-radius:50%;
-  background:var(--green);cursor:pointer;
+  background:var(--accent);cursor:pointer;
   border:3px solid #fff;box-shadow:0 2px 8px rgba(33,160,56,.3);
   transition:transform .12s;
 }
@@ -187,22 +184,22 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.18)}
   border-radius:var(--radius-sm);color:var(--muted);
   cursor:pointer;transition:all var(--transition);margin-bottom:8px;
 }
-.dashed-btn:hover{border-color:var(--green);color:var(--green);background:var(--green-light)}
+.dashed-btn:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
 .btn-green{
   display:inline-flex;align-items:center;justify-content:center;gap:6px;
-  padding:10px 24px;background:var(--green);color:#fff;
+  padding:10px 24px;background:var(--accent);color:#fff;
   border:none;border-radius:var(--radius-sm);
   cursor:pointer;font-weight:600;font-size:14px;font-family:inherit;
   transition:all var(--transition);
 }
-.btn-green:hover{background:var(--green-hover);box-shadow:0 4px 16px rgba(33,160,56,.25)}
+.btn-green:hover{background:var(--accent-hover);box-shadow:0 4px 16px rgba(33,160,56,.25)}
 input[type=text]{
   width:100%;padding:10px 14px;font-size:14px;
   border:1.5px solid var(--border);border-radius:var(--radius-sm);
   font-family:inherit;color:var(--ink);
   transition:border-color var(--transition);
 }
-input[type=text]:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px var(--green-light)}
+input[type=text]:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-light)}
 input[type=text]::placeholder{color:var(--ghost)}
 
 /* ═══════════════════════════════════════════════ RESULT BOX ═════════════════════════════════════ */
@@ -230,7 +227,7 @@ input[type=file]{width:100%;padding:8px;font-size:12px;border:1.5px solid var(--
 }
 .track-card h3{font-size:15px;font-weight:600;color:var(--dark);margin-bottom:14px;padding-bottom:12px;border-bottom:2px solid var(--border)}
 .track-card .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;vertical-align:middle;margin-top:-2px}
-.track-card .dot.green{background:var(--green)}
+.track-card .dot.green{background:var(--accent)}
 .track-card .dot.gray{background:var(--ghost)}
 .track-row{display:flex;gap:10px}
 .track-row input{flex:1}
@@ -252,7 +249,7 @@ input[type=file]{width:100%;padding:8px;font-size:12px;border:1.5px solid var(--
 <!-- ═══════════════════════════════════════════════ HEADER ═══════════════════════════════════════ -->
 <header class="header">
   <div class="header-inner">
-    <div class="logo"><span class="gr">traderate</span><span class="or">.</span><span class="or">ru</span></div>
+    <div class="logo"><span class="gr">Trade</span><span class="or">Rate</span></div>
     <div class="badge">Калькуляторы логистики под ключ</div>
     <div class="header-right" onclick="openCurrency()">
       <div class="rate">1 INR = <strong id="rate-inr">0.81</strong><small>RUB</small></div>
@@ -343,7 +340,7 @@ input[type=file]{width:100%;padding:8px;font-size:12px;border:1.5px solid var(--
   <div class="card">
     <div class="card-title">Вашкевич Константин</div>
     <div style="display:flex;align-items:center;gap:20px;margin-bottom:24px;flex-wrap:wrap">
-      <div style="width:64px;height:64px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;flex-shrink:0">KV</div>
+      <div style="width:64px;height:64px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;flex-shrink:0">KV</div>
       <div>
         <div style="font-size:16px;font-weight:600;color:var(--dark)">Руководитель проектов по логистике</div>
         <div style="font-size:13px;color:var(--muted)">Индийское направление · 10 лет в международной логистике · Английский B2</div>
@@ -352,7 +349,7 @@ input[type=file]{width:100%;padding:8px;font-size:12px;border:1.5px solid var(--
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
       <div>
-        <h3 style="font-size:14px;font-weight:600;color:var(--dark);margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--green)">Опыт</h3>
+        <h3 style="font-size:14px;font-weight:600;color:var(--dark);margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--accent)">Опыт</h3>
         <div style="margin-bottom:14px">
           <div style="font-size:13px;font-weight:600">ПРОСКО (PROSCO) — Руководитель проектов</div>
           <div style="font-size:11px;color:var(--ghost);margin-bottom:4px">Ноябрь 2021 — настоящее время (4,5 года)</div>
@@ -366,7 +363,7 @@ input[type=file]{width:100%;padding:8px;font-size:12px;border:1.5px solid var(--
         </div>
       </div>
       <div>
-        <h3 style="font-size:14px;font-weight:600;color:var(--dark);margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--green)">Проекты</h3>
+        <h3 style="font-size:14px;font-weight:600;color:var(--dark);margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--accent)">Проекты</h3>
         <div style="margin-bottom:14px">
           <div style="font-size:13px;font-weight:600">TradeRate · traderate.ru</div>
           <div style="font-size:12px;color:var(--muted);line-height:1.6">
@@ -376,7 +373,7 @@ input[type=file]{width:100%;padding:8px;font-size:12px;border:1.5px solid var(--
             — Расчёты на основе реальных рыночных ставок
           </div>
         </div>
-        <h3 style="font-size:14px;font-weight:600;color:var(--dark);margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--green)">Навыки</h3>
+        <h3 style="font-size:14px;font-weight:600;color:var(--dark);margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--accent)">Навыки</h3>
         <div style="display:flex;flex-wrap:wrap;gap:6px">
           <span style="display:inline-block;background:var(--bg);color:var(--muted);padding:3px 8px;border-radius:4px;font-size:11px">ВЭД</span>
           <span style="display:inline-block;background:var(--bg);color:var(--muted);padding:3px 8px;border-radius:4px;font-size:11px">Таможня</span>
@@ -394,7 +391,7 @@ input[type=file]{width:100%;padding:8px;font-size:12px;border:1.5px solid var(--
 <div class="tab-page" id="page-6">
   <div style="background:var(--dark);border-radius:var(--radius);padding:32px;color:#fff;max-width:600px;margin:0 auto">
     <div style="display:flex;gap:16px;margin-bottom:20px;font-size:13px">
-      <span style="font-weight:600;border-bottom:2px solid var(--green);padding-bottom:4px">Индийская рупия</span>
+      <span style="font-weight:600;border-bottom:2px solid var(--accent);padding-bottom:4px">Индийская рупия</span>
       <span style="color:rgba(255,255,255,.3)">Российский рубль</span>
     </div>
     <div style="font-size:42px;font-weight:700;margin-bottom:6px">INR / RUB</div>
