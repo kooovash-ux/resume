@@ -526,7 +526,7 @@ function av(){
   h+='<button class="dashed-btn" onclick="avInsTg()">Страхование</button>';
   h+='<div id="av-ins-p" class="hidden panel">'+slider('av-g','Стоимость товара',100,200000,10000,500,'$',['$100','$50k','$100k','$200k'])+'</div>';
   h+='<button class="dashed-btn" onclick="avBrkTg()">Таможенное оформление</button>';
-  h+='<div id="av-brk-p" class="hidden panel"><div class="mb" style="margin-bottom:0"><label>Код ТН ВЭД</label><select id="av-hs" style="height:70px"></select></div></div>';
+  h+='<div id="av-brk-p" class="hidden panel"><div class="mb" style="margin-bottom:0"><label>Код ТН ВЭД</label><select id="av-hs"></select></div></div>';
   h+='<button class="dashed-btn" onclick="avDG()">Опасный груз</button>';
   h+='<div id="av-dg" class="hidden dg-panel"><div class="warn">Требуется паспорт безопасности MSDS</div><input type="file"><button class="btn-green" style="width:100%" onclick="alert(\'Свяжитесь с менеджером\')">Связь с менеджером</button></div>';
   h+='</div><div><h3 style="font-weight:500;font-size:16px;margin-bottom:12px;color:var(--dark)">Стоимость</h3><div class="result" id="av-res"><div style="color:var(--ghost)">Выберите параметры</div></div></div>';
