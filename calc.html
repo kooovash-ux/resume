@@ -489,7 +489,8 @@ const AVC=[{t:'Мумбаи (BOM)',v:'bom',a:1},{t:'Нью-Дели (DEL)',v:'de
 
 // ═══════════════ SLIDER FACTORY ══════════
 function slider(id,label,min,max,val,step,unit,labels){
-  return '<div class="mb"><label>'+label+'</label><div class="sl-wrap"><div class="sl-val"><span id="'+id+'-v">'+(step<1?parseFloat(val).toFixed(1):num(val))+'</span><span class="u"> '+unit+'</span></div><input type="range" id="'+id+'" min="'+min+'" max="'+max+'" step="'+step+'" value="'+val+'" oninput="u'+id.toUpperCase()+'()"><div class="sl-lbl">'+labels.map(l=>'<span>'+l+'</span>').join('')+'</div></div></div>'}
+  var fn = 'u'+id.toUpperCase().replace(/-/g,'')+'()';
+  return '<div class="mb"><label>'+label+'</label><div class="sl-wrap"><div class="sl-val"><span id="'+id+'-v">'+(step<1?parseFloat(val).toFixed(1):num(val))+'</span><span class="u"> '+unit+'</span></div><input type="range" id="'+id+'" min="'+min+'" max="'+max+'" step="'+step+'" value="'+val+'" oninput="'+fn+'"><div class="sl-lbl">'+labels.map(l=>'<span>'+l+'</span>').join('')+'</div></div></div>'}
 function up(id){var v=parseFloat(document.getElementById(id).value)||0;document.getElementById(id+'-v').textContent=document.getElementById(id).step<1?v.toFixed(1):num(v)}
 function upAvW(){up('av-w');av();up('av-w')}
 
