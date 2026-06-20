@@ -105,9 +105,8 @@ body{
 }
 .tabs button:hover{border-color:var(--accent);color:var(--accent)}
 .tabs button.active{
-  background:var(--dark);border-color:var(--dark);
+  background:var(--accent);border-color:var(--accent);
   color:#fff;font-weight:600;
-  box-shadow:0 2px 8px rgba(10,30,61,.25);
 }
 @media(max-width:768px){.tabs-wrap{padding:16px 12px 0}.tabs button{padding:8px 14px;font-size:12px}}
 
@@ -170,7 +169,7 @@ input[type=range]{
 input[type=range]::-webkit-slider-thumb{
   -webkit-appearance:none;width:22px;height:22px;border-radius:50%;
   background:var(--accent);cursor:pointer;
-  border:3px solid #fff;box-shadow:0 2px 8px rgba(33,160,56,.3);
+  border:3px solid #fff;box-shadow:0 2px 8px rgba(0,98,173,.3);
   transition:transform .12s;
 }
 input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.18)}
@@ -192,7 +191,7 @@ input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.18)}
   cursor:pointer;font-weight:600;font-size:14px;font-family:inherit;
   transition:all var(--transition);
 }
-.btn-green:hover{background:var(--accent-hover);box-shadow:0 4px 16px rgba(33,160,56,.25)}
+.btn-green:hover{background:var(--accent-hover);box-shadow:0 4px 16px rgba(0,98,173,.25)}
 input[type=text]{
   width:100%;padding:10px 14px;font-size:14px;
   border:1.5px solid var(--border);border-radius:var(--radius-sm);
@@ -267,7 +266,7 @@ input[type=file]{width:100%;padding:8px;font-size:12px;border:1.5px solid var(--
     <button data-tab="2">Целые контейнеры (FCL)</button>
     <button data-tab="3">Доставка образцов</button>
     <button data-tab="4">Отслеживание</button>
-    <a href="resume.html" style="background:#21A038;color:#fff;font-weight:600;border:none;border-radius:8px;padding:10px 20px;font-size:12px;text-decoration:none;display:inline-flex;align-items:center;margin-left:8px">Резюме</a>
+    <a href="resume.html" style="background:var(--accent);color:#fff;font-weight:600;border:none;border-radius:8px;padding:10px 20px;font-size:12px;text-decoration:none;display:inline-flex;align-items:center;margin-left:8px">Резюме</a>
   </nav>
 </div>
 
