@@ -6,7 +6,7 @@
 <style>
 @page{size:A4;margin:20mm}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',-apple-system,sans-serif;font-size:12px;line-height:1.5;color:#1a1a2e;max-width:700px;margin:0 auto;padding:40px 30px}
+body{font-family:'Segoe UI',-apple-system,sans-serif;font-size:12px;line-height:1.5;color:#1a1a2e;max-width:700px;margin:0 auto;padding:40px 30px;position:relative}
 h1{font-size:24px;font-weight:800;letter-spacing:-.5px;margin-bottom:4px}
 .sub{font-size:13px;color:#666;margin-bottom:20px}
 .section{margin-bottom:20px}
@@ -25,9 +25,20 @@ h1{font-size:24px;font-weight:800;letter-spacing:-.5px;margin-bottom:4px}
 .contact{font-size:11px;color:#555;margin-bottom:2px}
 .portfolio{font-size:11px;color:#21A038;margin-top:4px}
 .project-highlight{background:#e8f5e9;border-left:3px solid #21A038;padding:8px 12px;border-radius:4px;font-size:12px;margin-bottom:8px}
+.toolbar{position:absolute;top:16px;right:20px;display:flex;gap:10px}
+.toolbar a,.toolbar button{width:34px;height:34px;border-radius:50%;border:1.5px solid #ddd;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;text-decoration:none;color:#666;font-size:16px;transition:all .15s}
+.toolbar a:hover,.toolbar button:hover{border-color:#21A038;color:#21A038}
+.toolbar .close-btn{font-size:20px;font-weight:300;color:#999}
+.toolbar .close-btn:hover{color:#e53935;border-color:#e53935}
 </style>
 </head>
 <body>
+
+<div class="toolbar">
+  <a href="resume.pdf" title="Скачать PDF">&#128196;</a>
+  <button onclick="copyLink()" title="Скопировать ссылку">&#128279;</button>
+  <button class="close-btn" onclick="window.location='calc.html'" title="Закрыть">&times;</button>
+</div>
 
 <div class="avatar"><img src="photo_2026-06-20_04-23-18.jpg" alt="KV"></div>
 <div class="header-row">
@@ -120,6 +131,10 @@ h1{font-size:24px;font-weight:800;letter-spacing:-.5px;margin-bottom:4px}
 </div>
 
 <p style="text-align:center;color:#888;font-size:10px;margin-top:20px">sber-rate.in — калькуляторы логистики Индия-РФ</p>
+
+<script>
+function copyLink(){navigator.clipboard.writeText(location.href).then(()=>alert('Ссылка скопирована'))}
+</script>
 
 </body>
 </html>
